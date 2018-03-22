@@ -26,3 +26,8 @@ be set up correctly:
 
   1. Figure out how to check in the makefile if compiling under gcc or clang and set flags accordingly.
   2. Do some 'realistic' tests, look into accessing thread-safe singleton objects, especially for getting parallel random number streams.
+
+### Useful links:
+  * https://thecoatlessprofessor.com/programming/openmp-in-r-on-os-x/
+  * not useful for package development, but a few good examples of how to code with omp: http://gallery.rcpp.org/tags/openmp/
+  * slightly older, but useful for setting compilation flags in `makevars`: https://mattstats.wordpress.com/2016/07/12/openmp-on-os-x-using-gcc/ and it references this bit of the official R docs: https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Customizing-package-compilation
