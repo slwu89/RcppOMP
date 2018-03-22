@@ -1,0 +1,4 @@
+## -*- makefile -*-
+PKG_CXXFLAGS +=  -Xpreprocessor -fopenmp -lomp
+PKG_CXXFLAGS += -I/usr/local/opt/libomp/include
+CXX_STD = CXX14

@@ -1,0 +1,9 @@
+-I./inst/include/
+-I./src/
+-I/usr/local/opt/libomp/include
+-I/Library/Frameworks/R.framework/Headers/
+-I/Library/Frameworks/R.framework/Versions/3.4/Resources/library/Rcpp/include
+-I/Library/Frameworks/R.framework/Versions/3.4/Resources/library/RcppArmadillo/include
+-I/Library/Frameworks/R.framework/Versions/3.4/Resources/library/RcppProgress/include
+-L/usr/local/opt/libomp/lib
+-std=c++14
