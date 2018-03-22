@@ -33,11 +33,22 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// test_singletonOMP
+void test_singletonOMP(const uint_least32_t& seed);
+RcppExport SEXP _RcppOMP_test_singletonOMP(SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const uint_least32_t& >::type seed(seedSEXP);
+    test_singletonOMP(seed);
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppOMP_rcpp_hello_world", (DL_FUNC) &_RcppOMP_rcpp_hello_world, 0},
     {"_RcppOMP_rcpp_hello_world_omp", (DL_FUNC) &_RcppOMP_rcpp_hello_world_omp, 0},
     {"_RcppOMP_rcpp_hello_world_omp_2", (DL_FUNC) &_RcppOMP_rcpp_hello_world_omp_2, 0},
+    {"_RcppOMP_test_singletonOMP", (DL_FUNC) &_RcppOMP_test_singletonOMP, 1},
     {NULL, NULL, 0}
 };
 
