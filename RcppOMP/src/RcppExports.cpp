@@ -24,10 +24,20 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// rcpp_hello_world_omp_2
+void rcpp_hello_world_omp_2();
+RcppExport SEXP _RcppOMP_rcpp_hello_world_omp_2() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_hello_world_omp_2();
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppOMP_rcpp_hello_world", (DL_FUNC) &_RcppOMP_rcpp_hello_world, 0},
     {"_RcppOMP_rcpp_hello_world_omp", (DL_FUNC) &_RcppOMP_rcpp_hello_world_omp, 0},
+    {"_RcppOMP_rcpp_hello_world_omp_2", (DL_FUNC) &_RcppOMP_rcpp_hello_world_omp_2, 0},
     {NULL, NULL, 0}
 };
 

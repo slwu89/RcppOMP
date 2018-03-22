@@ -2,5 +2,6 @@
 
 export(rcpp_hello_world)
 export(rcpp_hello_world_omp)
+export(rcpp_hello_world_omp_2)
 import(Rcpp)
 useDynLib(RcppOMP)

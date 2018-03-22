@@ -11,3 +11,8 @@ rcpp_hello_world_omp <- function() {
     invisible(.Call('_RcppOMP_rcpp_hello_world_omp', PACKAGE = 'RcppOMP'))
 }
 
+#' @export
+rcpp_hello_world_omp_2 <- function() {
+    invisible(.Call('_RcppOMP_rcpp_hello_world_omp_2', PACKAGE = 'RcppOMP'))
+}
+

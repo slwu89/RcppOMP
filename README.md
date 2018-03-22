@@ -31,3 +31,4 @@ be set up correctly:
   * https://thecoatlessprofessor.com/programming/openmp-in-r-on-os-x/
   * not useful for package development, but a few good examples of how to code with omp: http://gallery.rcpp.org/tags/openmp/
   * slightly older, but useful for setting compilation flags in `makevars`: https://mattstats.wordpress.com/2016/07/12/openmp-on-os-x-using-gcc/ and it references this bit of the official R docs: https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Customizing-package-compilation
+  * insanely useful website about omp: https://people.sc.fsu.edu/~jburkardt/cpp_src/hello_openmp/hello_openmp.html
