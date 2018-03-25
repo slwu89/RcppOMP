@@ -18,6 +18,6 @@ rcpp_hello_world_omp_2 <- function() {
 
 #' @export
 test_singletonOMP <- function(seed) {
-    invisible(.Call('_RcppOMP_test_singletonOMP', PACKAGE = 'RcppOMP', seed))
+    .Call('_RcppOMP_test_singletonOMP', PACKAGE = 'RcppOMP', seed)
 }
 

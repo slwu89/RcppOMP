@@ -34,13 +34,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // test_singletonOMP
-void test_singletonOMP(const uint_least32_t& seed);
+std::vector<double> test_singletonOMP(const uint_least32_t& seed);
 RcppExport SEXP _RcppOMP_test_singletonOMP(SEXP seedSEXP) {
 BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const uint_least32_t& >::type seed(seedSEXP);
-    test_singletonOMP(seed);
-    return R_NilValue;
+    rcpp_result_gen = Rcpp::wrap(test_singletonOMP(seed));
+    return rcpp_result_gen;
 END_RCPP
 }
 
