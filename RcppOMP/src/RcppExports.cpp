@@ -49,6 +49,30 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// nesting_collapse
+Rcpp::NumericMatrix nesting_collapse(const int xmax, const int ymax);
+RcppExport SEXP _RcppOMP_nesting_collapse(SEXP xmaxSEXP, SEXP ymaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type xmax(xmaxSEXP);
+    Rcpp::traits::input_parameter< const int >::type ymax(ymaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(nesting_collapse(xmax, ymax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// nesting_serial
+Rcpp::NumericMatrix nesting_serial(const int xmax, const int ymax);
+RcppExport SEXP _RcppOMP_nesting_serial(SEXP xmaxSEXP, SEXP ymaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type xmax(xmaxSEXP);
+    Rcpp::traits::input_parameter< const int >::type ymax(ymaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(nesting_serial(xmax, ymax));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP _RcppOMP_rcpp_hello_world() {
@@ -94,6 +118,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RcppOMP_table_simd", (DL_FUNC) &_RcppOMP_table_simd, 1},
     {"_RcppOMP_table_serial", (DL_FUNC) &_RcppOMP_table_serial, 1},
     {"_RcppOMP_mandelbrot", (DL_FUNC) &_RcppOMP_mandelbrot, 2},
+    {"_RcppOMP_nesting_collapse", (DL_FUNC) &_RcppOMP_nesting_collapse, 2},
+    {"_RcppOMP_nesting_serial", (DL_FUNC) &_RcppOMP_nesting_serial, 2},
     {"_RcppOMP_rcpp_hello_world", (DL_FUNC) &_RcppOMP_rcpp_hello_world, 0},
     {"_RcppOMP_rcpp_hello_world_omp", (DL_FUNC) &_RcppOMP_rcpp_hello_world_omp, 0},
     {"_RcppOMP_rcpp_hello_world_omp_2", (DL_FUNC) &_RcppOMP_rcpp_hello_world_omp_2, 0},

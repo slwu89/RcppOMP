@@ -49,6 +49,16 @@ mandelbrot <- function(width = 78L, height = 44L) {
 }
 
 #' @export
+nesting_collapse <- function(xmax, ymax) {
+    .Call('_RcppOMP_nesting_collapse', PACKAGE = 'RcppOMP', xmax, ymax)
+}
+
+#' @export
+nesting_serial <- function(xmax, ymax) {
+    .Call('_RcppOMP_nesting_serial', PACKAGE = 'RcppOMP', xmax, ymax)
+}
+
+#' @export
 rcpp_hello_world <- function() {
     .Call('_RcppOMP_rcpp_hello_world', PACKAGE = 'RcppOMP')
 }
