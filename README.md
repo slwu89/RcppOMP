@@ -22,6 +22,14 @@ be set up correctly:
   -DOpenMP_CXX_FLAGS="-Xpreprocessor -fopenmp -I/usr/local/opt/libomp/include" -DOpenMP_CXX_LIB_NAMES="omp" -DOpenMP_omp_LIBRARY=/usr/local/opt/libomp/lib/libomp.dylib
 ```
 
+## Package Functions
+
+### [Guide to OpenMP](https://bisqwit.iki.fi/story/howto/openmp/)
+
+Learning OpenMP from the afore linked-to guide.
+
+  1. src/guide_intro.cpp: functions from the [Introduction](https://bisqwit.iki.fi/story/howto/openmp/#IntroductionToOpenmpInC)
+
 ### To-do:
 
   1. Figure out how to check in the makefile if compiling under gcc or clang and set flags accordingly.
