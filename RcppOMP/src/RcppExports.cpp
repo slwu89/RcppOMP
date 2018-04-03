@@ -5,6 +5,50 @@
 
 using namespace Rcpp;
 
+// table_multiple_threads
+Rcpp::NumericVector table_multiple_threads(const int size);
+RcppExport SEXP _RcppOMP_table_multiple_threads(SEXP sizeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type size(sizeSEXP);
+    rcpp_result_gen = Rcpp::wrap(table_multiple_threads(size));
+    return rcpp_result_gen;
+END_RCPP
+}
+// table_simd
+Rcpp::NumericVector table_simd(const int size);
+RcppExport SEXP _RcppOMP_table_simd(SEXP sizeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type size(sizeSEXP);
+    rcpp_result_gen = Rcpp::wrap(table_simd(size));
+    return rcpp_result_gen;
+END_RCPP
+}
+// table_serial
+Rcpp::NumericVector table_serial(const int size);
+RcppExport SEXP _RcppOMP_table_serial(SEXP sizeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type size(sizeSEXP);
+    rcpp_result_gen = Rcpp::wrap(table_serial(size));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mandelbrot
+void mandelbrot(const int width, const int height);
+RcppExport SEXP _RcppOMP_mandelbrot(SEXP widthSEXP, SEXP heightSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type width(widthSEXP);
+    Rcpp::traits::input_parameter< const int >::type height(heightSEXP);
+    mandelbrot(width, height);
+    return R_NilValue;
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP _RcppOMP_rcpp_hello_world() {
@@ -46,6 +90,10 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_RcppOMP_table_multiple_threads", (DL_FUNC) &_RcppOMP_table_multiple_threads, 1},
+    {"_RcppOMP_table_simd", (DL_FUNC) &_RcppOMP_table_simd, 1},
+    {"_RcppOMP_table_serial", (DL_FUNC) &_RcppOMP_table_serial, 1},
+    {"_RcppOMP_mandelbrot", (DL_FUNC) &_RcppOMP_mandelbrot, 2},
     {"_RcppOMP_rcpp_hello_world", (DL_FUNC) &_RcppOMP_rcpp_hello_world, 0},
     {"_RcppOMP_rcpp_hello_world_omp", (DL_FUNC) &_RcppOMP_rcpp_hello_world_omp, 0},
     {"_RcppOMP_rcpp_hello_world_omp_2", (DL_FUNC) &_RcppOMP_rcpp_hello_world_omp_2, 0},
